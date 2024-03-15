@@ -9,11 +9,19 @@ Plugin URI: https://github.com/KjSerg/contacts-form-editor
 */
 
 define( 'CFE__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'CFE__SITE_URL', site_url() );
+define( 'CFE__ASSETS_URL', CFE__SITE_URL . '/wp-content/plugins/custom-form-editor/assets' );
 define( 'CFE__PLUGIN_NAME', 'custom-form-editor' );
 
-require_once( CFE__PLUGIN_DIR . 'form-post-type.php' );
-require_once( CFE__PLUGIN_DIR . 'form-short-code.php' );
-require_once( CFE__PLUGIN_DIR . 'carbonfields-init.php' );
+require_once( CFE__PLUGIN_DIR . 'functions/form-post-type.php' );
+require_once( CFE__PLUGIN_DIR . 'functions/form-short-code.php' );
+require_once( CFE__PLUGIN_DIR . 'functions/carbonfields-init.php' );
+require_once( CFE__PLUGIN_DIR . 'functions/helpers.php' );
+require_once( CFE__PLUGIN_DIR . 'functions/include-assets.php' );
+require_once( CFE__PLUGIN_DIR . 'functions/short-code-init.php' );
+require_once( CFE__PLUGIN_DIR . 'functions/ajax-functions.php' );
+require_once( CFE__PLUGIN_DIR . 'functions/settings.php' );
+require_once( CFE__PLUGIN_DIR . 'views/init.php' );
 
 add_action( 'admin_notices', function () {
 	echo '<div id="' . CFE__PLUGIN_NAME . '-notice" class="notice" style="">Custom Form Editor увімкнено</div>';
